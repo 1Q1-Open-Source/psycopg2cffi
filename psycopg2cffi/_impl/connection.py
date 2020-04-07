@@ -483,7 +483,7 @@ class Connection(object):
             self.status = consts.STATUS_CONNECTING
             return consts.POLL_WRITE
 
-        if self.status == consts.STATUS_CONNECTING:
+        if self.status in (consts.STATUS_CONNECTING, consts.STATUS_DATESTYLE):
             res = self._poll_connecting()
             if res == consts.POLL_OK and self._async:
                 return self._poll_setup_async()
