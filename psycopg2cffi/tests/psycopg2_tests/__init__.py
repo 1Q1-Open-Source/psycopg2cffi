@@ -30,6 +30,7 @@ from psycopg2cffi.tests.psycopg2_tests.testutils import unittest
 
 from psycopg2cffi.tests.psycopg2_tests import (
         test_async,
+        test_async_noniso_env,
         test_bugX000,
         test_bug_gc,
         test_bug_inf_fetch_loop,
@@ -69,6 +70,7 @@ def test_suite():
 
     suite = unittest.TestSuite()
     suite.addTest(test_async.test_suite())
+    suite.addTest(test_async_noniso_env.test_suite())
     suite.addTest(test_bugX000.test_suite())
     suite.addTest(test_bug_gc.test_suite())
     suite.addTest(test_cancel.test_suite())
