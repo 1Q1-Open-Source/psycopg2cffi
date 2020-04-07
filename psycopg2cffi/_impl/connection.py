@@ -640,6 +640,7 @@ class Connection(object):
             if not self._iso_compatible_datestyle():
                 self.status = consts.STATUS_DATESTYLE
                 self._set_guc('datestyle', 'ISO')
+                self.status = consts.STATUS_READY
 
             self._closed = 0
 
