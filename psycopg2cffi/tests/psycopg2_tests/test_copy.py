@@ -26,13 +26,13 @@ import sys
 import string
 
 # try to use io.TextIOWrapper, it has much better memory efficiency on pypy3 (7.3.0)
-try:
+if sys.version_info[0] >= 3:
     import io
     def StringIO(*args, **kwargs):
         buffer = io.BytesIO()
         b = io.TextIOWrapper(buffer, *args, **kwargs)
         return b
-except ImportError:
+else:
     from six.moves import cStringIO as StringIO
     
 from itertools import cycle
