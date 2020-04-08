@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/chtd/psycopg2cffi.svg?branch=master
-    :target: https://travis-ci.org/chtd/psycopg2cffi
+.. image:: https://travis-ci.com/Omegapol/psycopg2cffi.svg?branch=master
+    :target: https://travis-ci.com/github/Omegapol/psycopg2cffi
 
 .. contents::
 
