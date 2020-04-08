@@ -24,7 +24,17 @@
 
 import sys
 import string
-from six.moves import cStringIO as StringIO
+
+# try to use io.TextIOWrapper, it has much better memory efficiency on pypy3 (7.3.0)
+try:
+    import io
+    def StringIO(*args, **kwargs):
+        buffer = io.BytesIO()
+        b = io.TextIOWrapper(buffer, *args, **kwargs)
+        return b
+except ImportError:
+    from six.moves import cStringIO as StringIO
+    
 from itertools import cycle
 from six.moves import xrange, zip as izip
 
